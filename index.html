@@ -490,7 +490,7 @@ const CONFIG = {
   ],
   // 계좌: [관계, 이름, 은행, 계좌번호, 카카오페이 송금 링크(없으면 "")]
   accounts: {
-    groom: [["신랑", "김태일", "우리은행", "1002-355-723751", ""]],
+    groom: [["신랑", "김태일", "우리은행", "1002-355-723751", ""], ["신랑 아버지", "정성찬", "우리은행 (예금주 김태일)", "1002-355-723751", ""], ["신랑 어머니", "김선옥", "우리은행 (예금주 김태일)", "1002-355-723751", ""]],
     bride: [["신부", "나연수", "국민은행", "6666-02-04-177148", ""], ["신부 아버지", "나병호", "은행명", "000-0000-0000", ""], ["신부 어머니", "이수빈", "은행명", "000-0000-0000", ""]],
   },
   // 참석 의사 접수 주소 (구글 시트 Apps Script 웹 앱 URL, rsvp-apps-script.gs 참고)
@@ -538,8 +538,8 @@ $("#introDate").textContent = `${Y}. ${pad(M + 1)}. ${pad(D)}`;
 })();
 
 $("#family").innerHTML =
-  `<div>${esc(C.groomParents.join(" · "))}<span class="rel">의 ${esc(C.groomRel)}</span> <b>${esc(C.groom)}</b></div>` +
-  `<div>${esc(C.brideParents.join(" · "))}<span class="rel">의 ${esc(C.brideRel)}</span> <b>${esc(C.bride)}</b></div>`;
+  `<div><span class="rel">신랑</span> <b>${esc(C.groom)}</b></div>` +
+  `<div><span class="rel">신부</span> <b>${esc(C.bride)}</b></div>`;
 
 // 달력
 (function () {
